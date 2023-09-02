@@ -5,11 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class GetUserService {
-  private URL: string = 'http://localhost:3000/rest/user/findAll/json';
+  private URL: string =
+    'https://flashcards-production-215e.up.railway.app/rest/user/findAll/json';
 
   constructor(private http: HttpClient) {}
 
-  getResponse(){
+  getResponse() {
     return this.http.get(this.URL);
   }
 }
