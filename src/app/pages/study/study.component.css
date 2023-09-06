@@ -21,7 +21,7 @@ div.flip-container{
     
   }
   
-      .flip-container:active .flipper,  
+      .flip-container:hover .flipper,  
     .flip-container.focus .flipper {
           -webkit-transform: rotateY(180deg);
           -moz-transform: rotateY(180deg);
@@ -32,19 +32,21 @@ div.flip-container{
   .flip-container, .front, .back {
       width: 320px;
       height: 427px;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
   }
   
   .flipper {
-      -webkit-transition: 0.9s;
+      -webkit-transition: 1.5s;
       -webkit-transform-style: preserve-3d;
   
-      -moz-transition: 0.9s;
+      -moz-transition: 1.5s;
       -moz-transform-style: preserve-3d;
     
-    -o-transition: 0.9s;
+    -o-transition: 1.5s;
       -o-transform-style: preserve-3d;
   
-      transition: 0.9s;
+      transition: 1.5s;
       transform-style: preserve-3d;
   
       position: relative;
