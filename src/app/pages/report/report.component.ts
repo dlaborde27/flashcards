@@ -16,7 +16,7 @@ export class ReportComponent {
   public dataTopic:Topic[] = [];
   public da:Topic | any;
 
-  displayedColumns:string[] = ['question', 'answer'];
+  displayedColumns:string[] = ['question', 'answer','update','delete'];
   topicSelect = new FormControl('');
 
   constructor(private data:DataService, private topicSetter:TopicService){}
@@ -42,5 +42,11 @@ export class ReportComponent {
     this.data.getResponseCardByTopicId(id).subscribe((response) => {
       this.dataFlashCard = (response as Flashcard[]);
     })
+  }
+
+  deleteFlashCard(flashcard:Flashcard){
+    this.data.deleteTopic('/flashcard/delete/'+flashcard.id).subscribe((response)=>{
+      console.log('eliminado' + response)
+    });
   }
 }
