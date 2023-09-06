@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-confirmation-deck',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog-confirmation-deck.component.css']
 })
 export class DialogConfirmationDeckComponent {
-
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  
 }

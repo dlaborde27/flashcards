@@ -27,6 +27,7 @@ import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-c
 import { DialogConfirmationDeckComponent } from './shared/dialog-confirmation-deck/dialog-confirmation-deck.component';
 import { DatePipe } from '@angular/common';
 import { StudyComponent } from './pages/study/study.component';
+import { DialogUpdateFlashcardComponent } from './shared/dialog-update-flashcard/dialog-update-flashcard.component';
 //import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { StudyComponent } from './pages/study/study.component';
     DialogInformationDeckComponent,
     FlashcardCreatorComponent,
     DialogConfirmationDeckComponent,
-    StudyComponent
+    StudyComponent,
+    DialogUpdateFlashcardComponent
   ],
   imports: [
     BrowserModule,

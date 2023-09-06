@@ -5,6 +5,9 @@ import { DataService } from 'src/app/providers/data.service';
 import { Flashcard } from 'src/app/interfaces/flashcard';
 import { Topic } from 'src/app/interfaces/topic';
 import { TopicService } from 'src/app/shared/services/topic.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogUpdateFlashcardComponent } from 'src/app/shared/dialog-update-flashcard/dialog-update-flashcard.component';
 
 @Component({
   selector: 'app-report',
@@ -19,7 +22,7 @@ export class ReportComponent {
   displayedColumns:string[] = ['question', 'answer','update','delete'];
   topicSelect = new FormControl('');
 
-  constructor(private data:DataService, private topicSetter:TopicService){}
+  constructor(private data:DataService, private topicSetter:TopicService, private matDialog:MatDialog){}
 
   ngOnInit(){
     this.da=this.topicSetter.getSelectedTopic()
@@ -47,6 +50,17 @@ export class ReportComponent {
   deleteFlashCard(flashcard:Flashcard){
     this.data.deleteTopic('/flashcard/delete/'+flashcard.id).subscribe((response)=>{
       console.log('eliminado' + response)
+      this.ngOnInit();
     });
+  }
+
+  openDialogUpdate(flashcard:Flashcard){
+    const dialogFD = this.matDialog.open(DialogUpdateFlashcardComponent,{
+      width:'350px',
+      data:flashcard
+    })
+    dialogFD.afterClosed().subscribe((response) =>{
+      this.ngOnInit();
+    })
   }
 }

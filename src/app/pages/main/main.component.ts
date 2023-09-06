@@ -32,12 +32,13 @@ export class MainComponent {
     })
   }
 
-  deleteTopic(id:string){
-    this.dataProvider.deleteTopic('/topic/delete/'+id).subscribe(response => {
+  deleteTopic(data:Topic){
+    this.dataProvider.deleteTopic('/topic/delete/'+data.id).subscribe(response => {
       console.log("eliminado")
-      this.data = this.data.filter((elemento) => elemento.id !== id);
+      this.data = this.data.filter((elemento) => elemento.id !== data.id);
       this.matDialog.open(DialogConfirmationDeckComponent,{
-        width:'350px'
+        width:'350px',
+        data:data
       })
     });
   }
