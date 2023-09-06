@@ -12,6 +12,8 @@ export class DialogBodyComponent {
   constructor(public dialogoRef:MatDialogRef<DialogBodyComponent>,private data:DataService){}
 
   postTopic(name:string, description:string){
+    if(name=="" || description=="")
+      return;
     this.data.postTopic('/topic/save',{
       name:name,
       description:description,

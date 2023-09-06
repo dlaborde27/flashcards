@@ -26,6 +26,8 @@ export class MainComponent {
     })
 
     dialogFD.afterClosed().subscribe((response) =>{
+      if(!response)
+        return;
       this.data.push(response as Topic)
     })
   }
