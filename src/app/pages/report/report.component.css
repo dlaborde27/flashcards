@@ -5,7 +5,16 @@
 }
 
 .container {
-  padding-top: 2vh;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding: 4vh;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.eliminar:hover {
+  color: #B91010;
+}
+.editar:hover {
+  color: #024abd;
 }

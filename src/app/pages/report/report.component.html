@@ -25,14 +25,13 @@
       <ng-component matColumnDef="update">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <!-- <mat-icon (click)="deleteTopic(dato.id)" class="icon">edit</mat-icon> -->
-          <mat-icon class="icon">edit</mat-icon>
+          <mat-icon (click)="openDialogUpdate(element)" class="icon editar">edit</mat-icon>
         </td>
       </ng-component>
       <ng-component matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <mat-icon (click)="deleteFlashCard(element)" class="icon">delete</mat-icon>
+          <mat-icon (click)="deleteFlashCard(element)" class="icon eliminar">delete</mat-icon>
         </td>
       </ng-component>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
