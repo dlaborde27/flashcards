@@ -17,7 +17,7 @@
     </mat-card-content>
     <mat-card-actions fxFlexAlign="center">
         <button mat-button (click)="postFlashCard(question.value, answer.value)">Save</button>
-        <button mat-button>Cancel</button>
+        <button mat-button (click)="backToDeck()">Cancel</button>
     </mat-card-actions>
   </mat-card>
 </div>

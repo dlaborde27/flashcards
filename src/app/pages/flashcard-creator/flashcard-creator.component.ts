@@ -17,7 +17,6 @@ export class FlashcardCreatorComponent {
   constructor(
     private topicGetter: TopicService,
     private dataSetter: DataService,
-    private date: DatePipe,
     private router: Router
   ) {}
 
@@ -26,35 +25,29 @@ export class FlashcardCreatorComponent {
   }
 
   postFlashCard(question: string, answer: string) {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString().split('T')[0];
     this.dataSetter
       .postFlashCard('/flashcard/save', {
         question: question,
         answer: answer,
-        creationDate: this.date.transform(new Date(), 'yyyy-MM-dd'),
+        creation_date: formattedDate,
         user_id: '0941430688',
       })
       .subscribe((response) => {
-        this.router.navigate(['main']);
+        let flashcard = (response as Flashcard)
+        this.dataSetter.postFlashCard('/flashcard_topic/save',
+        {
+          flashcard_id:flashcard.id,
+          topic_id:this.topic.id
+        }).subscribe((response) => {
+          console.log(response);
+        });
+        this.backToDeck();
       });
   }
 
-  // postFlashCard(question:string, answer:string){
-  //   this.dataSetter.postFlashCard('/flashcard/save',
-  //   {
-  //     question:question,
-  //     answer:answer,
-  //     creationDate: this.date.transform(new Date(), 'yyyy-MM-dd'),
-  //     user_id:'0941430688'
-  //   }
-  //   ).subscribe((response) => {
-  //     let flashcard = (response as Flashcard)
-  //     this.dataSetter.postFlascard_Topic('/flashcard_topic/save',
-  //     {
-  //       flashcard_id: flashcard.id,
-  //       topic_id: this.topic.id
-  //     }).subscribe((response) =>{
-  //       this.router.navigate(['main']);
-  //     })
-  //   })
-  // }
+  backToDeck(){
+    this.router.navigate(['main']);
+  } 
 }

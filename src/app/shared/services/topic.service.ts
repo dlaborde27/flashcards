@@ -5,11 +5,11 @@ import { Topic } from 'src/app/interfaces/topic';
   providedIn: 'root'
 })
 export class TopicService {
-  selectedTopic:Topic | undefined;
+  selectedTopic:Topic | any;
   
   constructor() { }
 
-  setSelectedTopic(topic: Topic){
+  setSelectedTopic(topic: Topic | any){
     this.selectedTopic = topic;
   }
 

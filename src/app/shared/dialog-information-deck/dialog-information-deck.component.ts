@@ -9,10 +9,19 @@ import { TopicService } from '../services/topic.service';
   styleUrls: ['./dialog-information-deck.component.css']
 })
 export class DialogInformationDeckComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private router: Router, private topicSetter:TopicService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private router: Router, private topicSetter:TopicService) { 
+    topicSetter.setSelectedTopic(this.data)
+  }
 
   addCard() {
-    this.topicSetter.setSelectedTopic(this.data)
     this.router.navigate(['createCard']);
+  }
+
+  viewCards(){
+    this.router.navigate(['report']);
+  }
+  
+  studyNow(){
+    this.router.navigate(['study']);
   }
 }

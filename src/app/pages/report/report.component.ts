@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { DataService } from 'src/app/providers/data.service';
 import { Flashcard } from 'src/app/interfaces/flashcard';
 import { Topic } from 'src/app/interfaces/topic';
+import { TopicService } from 'src/app/shared/services/topic.service';
 
 @Component({
   selector: 'app-report',
@@ -13,13 +14,17 @@ import { Topic } from 'src/app/interfaces/topic';
 export class ReportComponent {
   public dataFlashCard:Flashcard[] = [];
   public dataTopic:Topic[] = [];
+  public da:Topic | any;
 
   displayedColumns:string[] = ['question', 'answer'];
   topicSelect = new FormControl('');
 
-  constructor(private data:DataService){}
+  constructor(private data:DataService, private topicSetter:TopicService){}
 
   ngOnInit(){
+    this.da=this.topicSetter.getSelectedTopic()
+
+
     this.data.getResponseCard().subscribe((response) => {
       this.dataFlashCard = (response as Flashcard[]);
     })
@@ -27,6 +32,10 @@ export class ReportComponent {
     this.data.getResponseTopic().subscribe((response) => {
       this.dataTopic = (response as Topic[]);
     })
+
+    if(this.da){
+      this.selection(Number.parseInt(this.topicSetter.getSelectedTopic()?.id))
+    }
   }
 
   selection(id:number){

@@ -39,8 +39,4 @@ export class DataService {
   postFlashCard(endpoint:string, body:any){
     return this.http.post(this.URL + endpoint, body);
   }
-
-  postFlascard_Topic(endpoint:string, body:any){
-    return this.http.post(this.URL + endpoint, body);
-  }
 }

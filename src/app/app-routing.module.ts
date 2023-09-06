@@ -4,12 +4,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { MainComponent } from './pages/main/main.component';
 import { ReportComponent } from './pages/report/report.component';
 import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-creator.component';
+import { StudyComponent } from './pages/study/study.component';
 
 const routes: Routes = [
   { path: "main", component: MainComponent },
   { path: "about", component: AboutComponent },
   { path: "report", component: ReportComponent },
   { path: "createCard", component: FlashcardCreatorComponent },
+  { path: "study", component: StudyComponent },
   { path: " ", redirectTo: '/main', pathMatch: 'full' },
   { path: "**", redirectTo: "main" }
 ];

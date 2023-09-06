@@ -26,6 +26,7 @@ import { DialogInformationDeckComponent } from './shared/dialog-information-deck
 import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-creator.component';
 import { DialogConfirmationDeckComponent } from './shared/dialog-confirmation-deck/dialog-confirmation-deck.component';
 import { DatePipe } from '@angular/common';
+import { StudyComponent } from './pages/study/study.component';
 //import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DatePipe } from '@angular/common';
     DialogBodyComponent,
     DialogInformationDeckComponent,
     FlashcardCreatorComponent,
-    DialogConfirmationDeckComponent
+    DialogConfirmationDeckComponent,
+    StudyComponent
   ],
   imports: [
     BrowserModule,
