@@ -1,1 +1,17 @@
-<p>study works!</p>
+
+<div class="containerCards">
+<div class="flip-container" *ngFor="let flashcard of dataFlashCard" >
+    <div class="flipper" >
+      <div class="front" [style.background-color]="colorSeleccionado" >
+        <p> 
+          {{flashcard.question}}
+        </p>
+      </div>
+      <div class="back" [style.background-color]="colorSeleccionado">
+  
+        <p>
+          {{flashcard.answer}}
+        </p>
+      </div>
+    </div>
+  </div>
