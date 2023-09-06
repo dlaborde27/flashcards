@@ -3,7 +3,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-content: space-between;
 
+}
+div.flip-container{
+    margin-top: 20px;
+    margin-top: 20px ;
 }
 .flip-container {
     -webkit-perspective: 1000;
@@ -67,10 +72,8 @@
     -o-transform: rotateY(180deg);
       transform: rotateY(180deg);
   
-      
   }
   
-
 p {
     font-size:  200%;
     font-family: arial;

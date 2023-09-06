@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/providers/data.service';
 import { Flashcard } from 'src/app/interfaces/flashcard';
 import { Topic } from 'src/app/interfaces/topic';
@@ -11,7 +10,11 @@ import { FormControl } from '@angular/forms';
   templateUrl: './study.component.html',
   styleUrls: ['./study.component.css']
 })
-export class StudyComponent {
+export class StudyComponent{
+  public flipped:boolean=false;
+  toggle() {
+    this.flipped = !this.flipped;
+  }
   public dataFlashCard:Flashcard[] = [];
   public dataTopic:Topic[] = [];
   public da:Topic | any;
