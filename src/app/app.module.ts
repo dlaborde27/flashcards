@@ -23,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogInformationDeckComponent } from './shared/dialog-information-deck/dialog-information-deck.component';
-import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-creator.component'
+import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-creator.component';
+import { DialogConfirmationDeckComponent } from './shared/dialog-confirmation-deck/dialog-confirmation-deck.component';
 //import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-c
     MenuComponent,
     DialogBodyComponent,
     DialogInformationDeckComponent,
-    FlashcardCreatorComponent
+    FlashcardCreatorComponent,
+    DialogConfirmationDeckComponent
   ],
   imports: [
     BrowserModule,

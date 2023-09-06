@@ -4,6 +4,7 @@ import { Topic } from 'src/app/interfaces/topic';
 import { DialogBodyComponent } from 'src/app/shared/dialog-body/dialog-body.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogInformationDeckComponent } from 'src/app/shared/dialog-information-deck/dialog-information-deck.component';
+import { DialogConfirmationDeckComponent } from 'src/app/shared/dialog-confirmation-deck/dialog-confirmation-deck.component';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -12,8 +13,7 @@ import { DialogInformationDeckComponent } from 'src/app/shared/dialog-informatio
 export class MainComponent {
   public data:Topic[]=[];
 
-  constructor(private dataProvider:DataService, 
-              private matDialog:MatDialog) { }
+  constructor(private dataProvider:DataService, private matDialog:MatDialog) { }
 
   ngOnInit(){
     this.dataProvider.getResponseTopic().subscribe((response) => {
@@ -29,6 +29,10 @@ export class MainComponent {
   deleteTopic(id:string){
     this.dataProvider.deleteTopic('/topic/delete/'+id).subscribe(response => {
       console.log("eliminado")
+      this.data = this.data.filter((elemento) => elemento.id !== id);
+      this.matDialog.open(DialogConfirmationDeckComponent,{
+        width:'350px'
+      })
     });
   }
 

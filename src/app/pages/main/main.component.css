@@ -5,6 +5,10 @@
   padding: 0;
   margin: 0;
 }
+.content:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 .mat-mdc-card-content:first-child{
   padding-top: 0;
 }
@@ -31,6 +35,9 @@
 }
 .icon {
   color: #B91010;
+}
+.icon:hover {
+  cursor: pointer;
 }
 #primary-header-title{
   font-family: 'Poppins', sans-serif;
