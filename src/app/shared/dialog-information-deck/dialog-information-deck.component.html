@@ -1,0 +1,15 @@
+<button mat-icon-button style="float: right;
+margin: 5px;" matDialogClose>
+    <mat-icon>close</mat-icon>
+</button>
+<mat-dialog-content>
+    <header>
+        <h1>{{data.name}}</h1>
+    </header>
+    <p>{{data.description}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary">Study Now <mat-icon>local_library</mat-icon></button>
+    <button mat-raised-button color="Warn">View Cards <mat-icon>visibility</mat-icon></button> 
+    <button mat-raised-button color="Warn" (click)="addCard()">Add Card <mat-icon>add</mat-icon></button>
+</mat-dialog-actions>

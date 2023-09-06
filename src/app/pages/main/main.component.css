@@ -1,0 +1,38 @@
+.example-card {
+  width: 70%;
+}
+.content{
+  padding: 0;
+  margin: 0;
+}
+.mat-mdc-card-content:first-child{
+  padding-top: 0;
+}
+.card-content {
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  margin: 2% 0 2% 0;
+  font-family: 'Hind', sans-serif;
+  font-size: large;
+}
+.card-content:hover {
+  background-color: #E6E7F3;
+}
+.card-header {
+  padding: 0 5% 0 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  margin: 2% 0 2% 0;
+}
+.icon {
+  color: #B91010;
+}
+#primary-header-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: xx-large;
+}

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Topic } from '../interfaces/topic';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +25,14 @@ export class DataService {
   getResponseCardByTopicId(id: number) {
     this.PATH_CARDBYTOPIC = `/flashcard/findCardByTopic/${id}/json`;
     return this.http.get(this.URL + this.PATH_CARDBYTOPIC);
+  }
+
+
+
+  postTopic(endpoint:string, body:any){
+    return this.http.post(this.URL + endpoint, body);
+  }
+  deleteTopic(endpoint:string){
+    return this.http.delete(this.URL + endpoint);
   }
 }
