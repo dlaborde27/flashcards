@@ -10,7 +10,11 @@ import { FormControl } from '@angular/forms';
   templateUrl: './study.component.html',
   styleUrls: ['./study.component.css']
 })
-export class StudyComponent implements OnInit{
+export class StudyComponent{
+  public flipped:boolean=false;
+  toggle() {
+    this.flipped = !this.flipped;
+  }
   public dataFlashCard:Flashcard[] = [];
   public dataTopic:Topic[] = [];
   public da:Topic | any;
