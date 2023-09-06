@@ -52,8 +52,11 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: green;
-      border: 1px solid #ccc
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      flex-wrap: wrap;
   }
   
 
@@ -69,14 +72,8 @@
   
 
 p {
-    font-size: 300%;
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      padding: 0 20px;
+    font-size:  200%;
     font-family: arial;
-    line-height: 5em;
+    line-height: 1em;
     text-align: center;
   }
