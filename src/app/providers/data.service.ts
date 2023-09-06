@@ -35,4 +35,12 @@ export class DataService {
   deleteTopic(endpoint:string){
     return this.http.delete(this.URL + endpoint);
   }
+
+  postFlashCard(endpoint:string, body:any){
+    return this.http.post(this.URL + endpoint, body);
+  }
+
+  postFlascard_Topic(endpoint:string, body:any){
+    return this.http.post(this.URL + endpoint, body);
+  }
 }

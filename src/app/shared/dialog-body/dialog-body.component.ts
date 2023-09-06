@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/providers/data.service';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Topic } from 'src/app/interfaces/topic';
 
 @Component({
   selector: 'app-dialog-body',
@@ -7,7 +9,7 @@ import { DataService } from 'src/app/providers/data.service';
   styleUrls: ['./dialog-body.component.css']
 })
 export class DialogBodyComponent {
-  constructor(private data:DataService){}
+  constructor(public dialogoRef:MatDialogRef<DialogBodyComponent>,private data:DataService){}
 
   postTopic(name:string, description:string){
     this.data.postTopic('/topic/save',{
@@ -15,7 +17,7 @@ export class DialogBodyComponent {
       description:description,
       user_id:'0941430688',
     }).subscribe(response => {
-      console.log("olap")
+      this.dialogoRef.close(response)
     });
   }
 }

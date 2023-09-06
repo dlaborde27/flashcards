@@ -25,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogInformationDeckComponent } from './shared/dialog-information-deck/dialog-information-deck.component';
 import { FlashcardCreatorComponent } from './pages/flashcard-creator/flashcard-creator.component';
 import { DialogConfirmationDeckComponent } from './shared/dialog-confirmation-deck/dialog-confirmation-deck.component';
+import { DatePipe } from '@angular/common';
 //import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { DialogConfirmationDeckComponent } from './shared/dialog-confirmation-de
     MatDialogModule,
     //MatButtonModule
   ],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

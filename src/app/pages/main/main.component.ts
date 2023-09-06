@@ -21,8 +21,12 @@ export class MainComponent {
     })
   }
   openDialog(){
-    this.matDialog.open(DialogBodyComponent,{
+    const dialogFD = this.matDialog.open(DialogBodyComponent,{
       width:'350px'
+    })
+
+    dialogFD.afterClosed().subscribe((response) =>{
+      this.data.push(response as Topic)
     })
   }
 
