@@ -10,7 +10,10 @@
       <mat-divider></mat-divider>
             <mat-card class="card-content">
                 <mat-card-content class="content" (click)="openDialogInformationDeck(dato)">{{dato.name}}</mat-card-content>
-                <mat-icon (click)="deleteTopic(dato)" class="icon">delete</mat-icon>
+                <div>
+                  <mat-icon class="icon edit" (click)="openDialogUpdate(dato)">edit</mat-icon>
+                  <mat-icon (click)="deleteTopic(dato)" class="icon delete">delete</mat-icon>
+                </div>
             </mat-card>
       </mat-card-content>
     </mat-card>

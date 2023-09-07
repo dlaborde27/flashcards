@@ -39,11 +39,14 @@
   align-items: center;
   margin: 2% 0 2% 0;
 }
-.icon {
+.delete {
   color: #B91010;
 }
 .icon:hover {
   cursor: pointer;
+}
+.edit{
+  color: #024abd
 }
 #primary-header-title{
   font-family: 'Poppins', sans-serif;

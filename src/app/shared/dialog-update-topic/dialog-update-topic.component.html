@@ -1,0 +1,23 @@
+<button mat-icon-button style="float: right;
+margin: 5px;" matDialogClose>
+    <mat-icon>close</mat-icon>
+</button>
+<mat-dialog-content>
+    <header>
+        <h1>Update</h1>
+    </header>
+    <p><mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput #name [value]="data.name">
+        <mat-icon matSuffix>topic</mat-icon>
+    </mat-form-field></p>
+    <p><mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput #description [value]="data.description">
+        <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field></p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="updateTopic(name,description)">Update</button>
+    <button mat-raised-button color="Warn" matDialogClose>Cancel</button>
+</mat-dialog-actions>
